@@ -2,17 +2,18 @@
     <div class="container">
         <h1>Vue2 Feature Practice</h1>
         <ul class="title">
-            <li key="1" @click="open(1)">计算属性和方法和监听属性</li>
-            <li key="2" @click="open(2)">Class和Style</li>
-            <li key="3" @click="open(3)">for和if</li>
-            <li key="4" @click="open(4)">事件和表单</li>
+            <li key="1" @click="open('ComputedWatchVue')">计算属性和方法和监听属性</li>
+            <li key="2" @click="open('ClassStyleVue')">Class和Style</li>
+            <li key="3" @click="open('IfAndForVue')">for和if</li>
+            <li key="4" @click="open('EventFormVue')">事件和表单</li>
+            <li key="5" @click="open('RegistryComponentVue')">组件注册</li>
+            <li key="6" @click="open('PropsAndEmitsVue')">Props和Emits</li>
+            <li key="7" @click="open('SlotAndComponent')">Slot和异步组件</li>
         </ul>
         <section class="content">
-            <computed-watch-vue v-if="n===1"/>
-            <class-style-vue v-else-if="n===2"/>
-            <if-and-for-vue v-else-if="n===3"/>
-            <event-form-vue v-else/>
+            <component :is="currentCop"></component>
         </section>
+
     </div>
 </template>
 
@@ -21,24 +22,29 @@ import ComputedWatchVue from './component/ComputedWatch.vue';
 import ClassStyleVue from "./component/ClassStyle.vue";
 import EventFormVue from "./component/EventForm.vue";
 import IfAndForVue from "./component/IfAndFor.vue";
-
+import RegistryComponentVue from './component/DeepStudy/RegistryComponent.vue';
+import PropsAndEmitsVue from './component/DeepStudy/PropsAndEmits.vue';
+import SlotAndComponent from './component/DeepStudy/SlotAndComponent.vue';
 export default {
-    components:{
+    components: {
         ComputedWatchVue,
         ClassStyleVue,
         EventFormVue,
-        IfAndForVue
+        IfAndForVue,
+        RegistryComponentVue,
+        PropsAndEmitsVue,
+        SlotAndComponent
     },
     data() {
         return {
             msg: "<span>我是通过v-html插入的原生标签</span>",
             e: 'click',
-            n: 1
+            currentCop: ""
         }
     },
     methods: {
-        open(v){
-            this.n = v;
+        open(v) {
+            this.currentCop = v;
         }
     },
     computed: {
@@ -86,11 +92,13 @@ export default {
     width: 100%;
     height: 100%;
     background-color: #bfa;
+
     .title {
         display: flex;
         justify-content: space-between;
     }
-    .content{
+
+    .content {
         display: flex;
         justify-content: space-between;
     }
