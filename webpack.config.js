@@ -20,6 +20,7 @@ module.exports = {
         hot: true,
         open: true
     },
+    cache: false,
     module: {
         rules: [
             {

@@ -27,6 +27,7 @@
             <li>v-model前边的案例演示了默认绑定value，并且监听input事件，我们在自定义组件中，只要声明value——prop，emit——input即可</li>
             <li>为了可读性，我们可以通过组件定义时model选项来声明v-model的的prop和event，则外部组件通过v-model双向绑定时，就会监听相应的prop和event</li>
             <li>与v-model相同功能的另一种实现是，绑定prop时使用修饰符.sync即可，相比于v-model其书写简单，组件内只要触发update:变量名即可，父组件也不用写监听器和回调函数</li>
+            <li>在Vue2中子组件内部不需要配置emits选项来声明自定义事件，直接使用$emit去触发就行</li>
         </ul>
         <section class="demo">
             <div>

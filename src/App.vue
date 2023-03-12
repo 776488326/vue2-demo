@@ -9,6 +9,9 @@
             <li key="5" @click="open('RegistryComponentVue')">组件注册</li>
             <li key="6" @click="open('PropsAndEmitsVue')">Props和Emits</li>
             <li key="7" @click="open('SlotAndComponent')">Slot和异步组件</li>
+            <li key="8" @click="open('EdgeCase')">边界情况演示</li>
+            <li key="9" @click="open('TransForm')">过渡动画组件</li>
+            <li key="10" @click="open('MixinAndDirective')">混入和复用</li>
         </ul>
         <section class="content">
             <component :is="currentCop"></component>
@@ -18,14 +21,20 @@
 </template>
 
 <script>
-import ComputedWatchVue from './component/ComputedWatch.vue';
-import ClassStyleVue from "./component/ClassStyle.vue";
-import EventFormVue from "./component/EventForm.vue";
-import IfAndForVue from "./component/IfAndFor.vue";
+import ComputedWatchVue from './component/BaseStudy/ComputedWatch.vue';
+import ClassStyleVue from "./component/BaseStudy/ClassStyle.vue";
+import EventFormVue from "./component/BaseStudy/EventForm.vue";
+import IfAndForVue from "./component/BaseStudy/IfAndFor.vue";
 import RegistryComponentVue from './component/DeepStudy/RegistryComponent.vue';
 import PropsAndEmitsVue from './component/DeepStudy/PropsAndEmits.vue';
 import SlotAndComponent from './component/DeepStudy/SlotAndComponent.vue';
+import EdgeCase from './component/DeepStudy/EdgeCase.vue';
+import TransForm from './component/AnimateAndTransform/TransForm.vue';
+import MixinAndDirective from './component/MultiplexComponent/MixinAndDirective.vue';
 export default {
+    provide: {
+        inj: "我只能提供静态数据，响应式数据的提供使用vuex来实现"
+    },
     components: {
         ComputedWatchVue,
         ClassStyleVue,
@@ -33,13 +42,17 @@ export default {
         IfAndForVue,
         RegistryComponentVue,
         PropsAndEmitsVue,
-        SlotAndComponent
+        SlotAndComponent,
+        EdgeCase,
+        TransForm,
+        MixinAndDirective
     },
     data() {
         return {
             msg: "<span>我是通过v-html插入的原生标签</span>",
             e: 'click',
-            currentCop: ""
+            currentCop: "ComputedWatchVue",
+            root: "我是根实例的数据"
         }
     },
     methods: {

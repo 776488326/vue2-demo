@@ -1,6 +1,6 @@
 import Vue from "vue";
 import App from "./App.vue";
-import ViewModel from "./component/ViewModel.vue";
+import ViewModel from "./component/BaseStudy/ViewModel.vue";
 
 Vue.component("view-model", ViewModel);
 

@@ -23,9 +23,6 @@ export default {
             }
         }
     },
-    emit: {
-
-    },
 
 }
 </script>
