@@ -28,6 +28,7 @@
   "dependencies": {
     "@babel/core": "^7.21.0",
     "@babel/preset-env": "^7.20.2",
+    "@gs-ui/gs-ui": "^2.11.15",
     "babel-loader": "^9.1.2"
   }
 }

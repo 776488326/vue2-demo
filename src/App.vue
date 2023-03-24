@@ -2,6 +2,7 @@
     <div class="container">
         <h1>Vue2 Feature Practice</h1>
         <ul class="title">
+            <li key="0" @click="open('TestDemoVue')">测试组件</li>
             <li key="1" @click="open('ComputedWatchVue')">计算属性和方法和监听属性</li>
             <li key="2" @click="open('ClassStyleVue')">Class和Style</li>
             <li key="3" @click="open('IfAndForVue')">for和if</li>
@@ -21,6 +22,7 @@
 </template>
 
 <script>
+import TestDemoVue from "./component/TestDemo.vue";
 import ComputedWatchVue from './component/BaseStudy/ComputedWatch.vue';
 import ClassStyleVue from "./component/BaseStudy/ClassStyle.vue";
 import EventFormVue from "./component/BaseStudy/EventForm.vue";
@@ -45,7 +47,8 @@ export default {
         SlotAndComponent,
         EdgeCase,
         TransForm,
-        MixinAndDirective
+        MixinAndDirective,
+        TestDemoVue
     },
     data() {
         return {

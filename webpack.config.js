@@ -16,7 +16,7 @@ module.exports = {
     ],
     devtool: "source-map",
     devServer: {
-        port: "3000",
+        port: "8888",
         hot: true,
         open: true
     },
