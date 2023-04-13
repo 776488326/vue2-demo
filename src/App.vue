@@ -69,28 +69,35 @@ export default {
         }
     },
     beforeCreate() {
+        debugger
         console.log("此时已经完成了事件和生命周期函数的初始化");
+        console.log('vm___________', this);
         console.log("beforeCreate_____________________");
     },
     created() {
         console.log("此时已经完成了数据的注入和响应式工作");
+        console.log('vm___________', this);
         console.log("create________________________");
     },
     beforeMount() {
         console.log("此时已经找到了不一定找到了el，但是template一定编译完成了");
+        console.log('vm___________', this);
         console.log("beforeMount________________________");
     },
     mounted() {
         console.log("此时已经找到了el，同时将template插入到el中了");
+        console.log('vm___________', this);
         console.log("mounted________________________");
 
     },
     beforeUpdate() {
         console.log("此时数据已经更新，但是还未进行虚拟DOM比较更新");
+        console.log('vm___________', this);
         console.log("beforeUpdate_____________________");
     },
     updated() {
         console.log("此时已经完成了虚拟DOM比较，并对真实DOM进行了更新");
+        console.log('vm___________', this);
         console.log("updated________________________");
 
     },

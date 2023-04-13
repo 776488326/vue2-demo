@@ -1,5 +1,6 @@
 <script setup>
 import { onMounted, ref, reactive } from 'vue'
+import IndicatorIcon from "../CookBook/Svg/IndicatorIcon.vue";
 const activeName = ref("first");
 const data = ref([{ name: "fengliang", value: 100, age: 25 }]);
 const items = ref([{ name: "first", label: "第一个" }]);
@@ -18,9 +19,12 @@ function submit(params) {
 }
 const view = ref(false);
 </script>
-
+ 
 <template>
     <div class='container'>
+        <icon-base color="#0080FF">
+            <IndicatorIcon />
+        </icon-base>
         <gs-button type="primary" @click="view = !view">切换显示</gs-button>
         <gs-tabs v-model="activeName" type="content-tab" direction="horizontal">
             <gs-tab-pane v-for="item in items" :key="item.name" :name="item.name" :label="item.label">

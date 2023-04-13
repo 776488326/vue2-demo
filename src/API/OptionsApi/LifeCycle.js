@@ -17,7 +17,7 @@ export default {
 
     },
     /**
-     * 再次初始化实例的 props、data、computed、methods 等属性。
+     * 将我们传入的option选项（默认存在$options中） props、data、computed、methods 等属性合并到实例身上。
      * 初始化实例的 $el 属性，用于存储实例的根 DOM 元素。
      * 处理provide，inject
      */
